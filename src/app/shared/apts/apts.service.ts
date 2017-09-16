@@ -10,14 +10,17 @@ export class AptsService {
   }
 
   getApts(): Observable<Apt[]> {
-    this.loadingService.start();
-    return new Observable((observer) => {
+    console.log('get apts');
+
+    const getApts: Observable<Apt[]> = Observable.create(observer => {
       setTimeout(() => {
         observer.next(this.createApts());
         observer.complete();
-        this.loadingService.stop();
-      }, 1500);
+      }, 1000);
     });
+
+    this.loadingService.start(getApts);
+    return getApts;
   }
 
   private createApts(): Apt[] {

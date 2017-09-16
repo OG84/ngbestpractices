@@ -11,14 +11,15 @@ export class WorkbooksService {
   }
 
   getWorkbooks(): Observable<Workbook[]> {
-    this.loadingService.start();
-    return new Observable((observer) => {
+    const getWorkbooks: Observable<Workbook[]> = Observable.create(observer => {
       setTimeout(() => {
         observer.next(this.createWorkbooks());
         observer.complete();
-        this.loadingService.stop();
-      }, 1000);
+      }, 500);
     });
+
+    this.loadingService.start(getWorkbooks);
+    return getWorkbooks;
   }
 
   private createWorkbooks(): Workbook[] {

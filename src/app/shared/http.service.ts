@@ -14,10 +14,8 @@ export class HttpService extends Http {
   }
 
   get(url: string, options?: RequestOptionsArgs): Observable<Response> {
-    this.loadingService.start();
-
     const get = super.get(url, options);
-    get.subscribe(x => this.loadingService.stop());
+    this.loadingService.start(get);
 
     return get;
   }

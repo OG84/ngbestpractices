@@ -1,26 +1,25 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs/Subject';
+import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class LoadingService {
 
   loadingChanged = new Subject<boolean>();
-  private isLoading: boolean;
-  private numberOfStarts = 0;
+  private observables: Observable<any>[] = [];
 
   constructor() { }
 
-  start(): void {
-    this.numberOfStarts++;
-    this.isLoading = true;
-    this.loadingChanged.next(this.isLoading);
-  }
+  start(observable: Observable<any>): void {
+    this.observables.push(observable);
+    observable.subscribe(x => {
+      const index = this.observables.indexOf(observable);
+      this.observables.splice(index, 1);
 
-  stop(): void {
-    this.numberOfStarts--;
-    if (this.numberOfStarts <= 0) {
-      this.isLoading = false;
-      this.loadingChanged.next(this.isLoading);
-    }
+      if (this.observables.length <= 0) {
+        this.loadingChanged.next(false);
+      }
+    });
+    this.loadingChanged.next(true);
   }
 }

@@ -10,14 +10,15 @@ export class ExercisesService {
   }
 
   getExercises(): Observable<Exercise[]> {
-    this.loadingService.start();
-    return new Observable((observer) => {
+    const getExercises: Observable<Exercise[]> = Observable.create(observer => {
       setTimeout(() => {
         observer.next(this.createExercises());
         observer.complete();
-        this.loadingService.stop();
-      }, 500);
+      }, 1500);
     });
+
+    this.loadingService.start(getExercises);
+    return getExercises;
   }
 
   private createExercises(): Exercise[] {
