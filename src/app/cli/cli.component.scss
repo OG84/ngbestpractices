@@ -1,5 +1,12 @@
 :host {
+  font-size: 1.2rem;
+
   .fact{
-    margin: 0 0 80px 0;
+    margin: 0 0 40px 0;
+  }
+
+  code {
+    padding: 15px;
+    margin: 0 0 10px 0;
   }
 }

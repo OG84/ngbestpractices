@@ -1,18 +1,23 @@
 <h1>CLI</h1>
 <div class="fact">
   <h2>Creating the app</h2>
-  <prism-block [code]="'ng new ngbestpractives --prefix ngbp --style scss'" [language]="'bash'"></prism-block>
-</div>
-
-<div class="fact">
-  <h2>Generating components</h2>
-  <prism-block [code]="'ng generate component home'" [language]="'bash'"></prism-block>
+  <section highlight-js-content=".highlight">
+    <code class="bash highlight">ng new ngbestpractives --prefix ngbp --style scss</code>
+  </section>
 </div>
 
 <div class="fact">
   <h2>View App Size</h2>
-  <prism-block [code]="'yarn global add source-map-explorer'" [language]="'bash'"></prism-block>
-  <prism-block [code]="'ng build -prod -sm'" [language]="'bash'"></prism-block>
-  <prism-block [code]="'source-map-explorer dist/vendor*'" [language]="'bash'"></prism-block>
-  <prism-block [code]="'source-map-explorer dist/main*'" [language]="'bash'"></prism-block>
+  <section highlight-js-content=".highlight">
+    <code class="bash highlight">yarn global add source-map-explorer</code>
+  </section>
+  <section highlight-js-content=".highlight">
+    <code class="bash highlight">ng build -prod -sm</code>
+  </section>
+  <section highlight-js-content=".highlight">
+    <code class="bash highlight">source-map-explorer dist/vendor*</code>
+  </section>
+  <section highlight-js-content=".highlight">
+    <code class="bash highlight">source-map-explorer dist/main*</code>
+  </section>
 </div>

@@ -5,9 +5,6 @@ import { AppComponent } from './app.component';
 import { CliComponent } from './cli/cli.component';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
-import 'prismjs/prism';
-import 'prismjs/components/prism-typescript';
-import { PrismComponent } from 'angular-prism';
 import { Http, XHRBackend, RequestOptions, HttpModule } from '@angular/http';
 import { HttpService } from './shared/http.service';
 import { ResolversComponent } from './resolvers/resolvers.component';
@@ -26,6 +23,7 @@ import 'hammerjs';
 import { GuardsComponent } from './guards/guards.component';
 import { CoverService } from './shared/covers/cover.service';
 import { CoverResolver } from './shared/covers/cover.resolver';
+import { HighlightJsModule, HighlightJsService } from 'angular2-highlight-js';
 
 const routes: Routes = [
   {
@@ -74,7 +72,6 @@ const routes: Routes = [
     CliComponent,
     HeaderComponent,
     HomeComponent,
-    PrismComponent,
     ResolversComponent,
     WithoutResolversComponent,
     WithResolversComponent,
@@ -84,7 +81,8 @@ const routes: Routes = [
     BrowserAnimationsModule,
     RouterModule.forRoot(routes),
     HttpModule,
-    MdProgressBarModule
+    MdProgressBarModule,
+    HighlightJsModule
   ],
   providers: [
     {
