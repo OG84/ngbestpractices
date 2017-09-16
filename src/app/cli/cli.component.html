@@ -1,0 +1,17 @@
+<div class="fact">
+  <h2>Creating the app</h2>
+  <prism-block [code]="'ng new ngbestpractives --prefix ngbp --routing --style scss'" [language]="'bash'"></prism-block>
+</div>
+
+<div class="fact">
+  <h2>Generating components</h2>
+  <prism-block [code]="'ng generate component home'" [language]="'bash'"></prism-block>
+</div>
+
+<div class="fact">
+  <h2>View App Size</h2>
+  <prism-block [code]="'yarn global add source-map-explorer'" [language]="'bash'"></prism-block>
+  <prism-block [code]="'ng build -prod -sm'" [language]="'bash'"></prism-block>
+  <prism-block [code]="'source-map-explorer dist/vendor*'" [language]="'bash'"></prism-block>
+  <prism-block [code]="'source-map-explorer dist/main*'" [language]="'bash'"></prism-block>
+</div>
