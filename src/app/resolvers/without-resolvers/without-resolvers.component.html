@@ -1,0 +1,14 @@
+<div class="products">
+    <div class="workbooks">
+      <h2>Workbooks</h2>
+      <span *ngFor="let workbook of workbooks">{{workbook.name}}</span>
+    </div>
+    <div class="exercises">
+      <h2>Exercises</h2>
+      <span *ngFor="let exercise of exercises">{{exercise.name}}</span>
+    </div>
+    <div class="apts">
+      <h2>APTs</h2>
+      <span *ngFor="let apt of apts">{{apt.name}}</span>
+    </div>
+  </div>

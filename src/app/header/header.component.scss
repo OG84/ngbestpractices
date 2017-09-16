@@ -1,62 +1,68 @@
 :host {
     display: flex;
+    flex-direction: column;
     padding: 0 0 40px;
-    justify-content: space-between;
 
     .menu {
         display: flex;
+        justify-content: space-between;
 
-        .item {
+        .items {
+            display: flex;
+
+            .item {
+                display: flex;
+                flex-direction: column;
+                font-size: 1.3rem;
+                cursor: pointer;
+                background-color: lightgray;
+                padding: 10px;
+                margin: 0 10px 0 0;
+                min-width: 80px;
+                align-items: center;
+                justify-content: center;
+                user-select: none;
+
+                &:hover {
+                    background-color: gray;
+                    color: white;
+                }
+
+                span {
+                    font-size: 1rem;
+                }
+
+                &.active {
+                    font-weight: bold;
+                    background-color: gray;
+                    color: white;
+                }
+            }
+
+        }
+
+        .brand {
             display: flex;
             flex-direction: column;
-            font-size: 1.3rem;
-            cursor: pointer;
-            background-color: lightgray;
-            padding: 10px;
-            margin: 0 10px 0 0;
-            min-width: 80px;
-            align-items: center;
-            justify-content: center;
-            user-select: none;
+            font-size: 2rem;
 
-            &:hover {
-                background-color: gray;
-                color: white;
+            .title {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                img {
+                    width: 200px;
+                    padding: 0 10px 0 0;
+                }
             }
 
-            span {
-              font-size: 1rem;
+            .sub-title {
+                font-size: 1.2rem;
+                text-align: right;
+                color: #b52e31;
+                font-weight: bold;
             }
-        }
-
-        .active {
-            font-weight: bold;
-            background-color: gray;
-            color: white;
-        }
-    }
-
-    .brand {
-        display: flex;
-        flex-direction: column;
-        font-size: 2rem;
-
-        .title {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            img {
-                width: 200px;
-                padding: 0 10px 0 0;
-            }
-        }
-
-        .sub-title {
-            font-size: 1.2rem;
-            text-align: right;
-            color: #b52e31;
-            font-weight: bold;
         }
     }
 }

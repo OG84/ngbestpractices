@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LoadingService } from '../shared/loading.service';
 
 @Component({
   selector: 'ngbp-header',
@@ -7,10 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  progressMode = 'determinate';
+
+  constructor(private loadingService: LoadingService) { }
 
   ngOnInit() {
-
+    this.loadingService.loadingChanged.subscribe(isLoading => {
+      if (isLoading) {
+        this.progressMode = 'indeterminate';
+      } else {
+        this.progressMode = 'determinate';
+      }
+    });
   }
 
 }

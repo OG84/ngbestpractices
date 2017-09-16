@@ -1,11 +1,15 @@
 <div class="menu">
-  <div class="item" routerLink="home" routerLinkActive="active">Home</div>
-  <div class="item" routerLink="cli" routerLinkActive="active">CLI<span>5 min.</span></div>
-  <div class="item" routerLink="resolvers" routerLinkActive="active">Resolvers<span>10 min.</span></div>
-  <div class="item" routerLink="guards" routerLinkActive="active">Guards<span>10 min.</span></div>
-  <div class="item" routerLink="routing" routerLinkActive="active">Routing<span>5 min.</span></div>
+  <div class="items">
+    <div class="item" routerLink="home" routerLinkActive="active">Home</div>
+    <div class="item" routerLink="cli" routerLinkActive="active">CLI<span>5 min.</span></div>
+    <div class="item" routerLink="resolvers" routerLinkActive="active">Resolvers<span>10 min.</span></div>
+    <div class="item" routerLink="guards" routerLinkActive="active">Guards<span>10 min.</span></div>
+    <div class="item" routerLink="routing" routerLinkActive="active">Routing<span>5 min.</span></div>
+  </div>
+  <div class="brand">
+    <div class="title"><img src="assets/angular-3.svg" />Best Practices</div>
+    <div class="sub-title">Craaaks Edition</div>
+  </div>
 </div>
-<div class="brand">
-  <div class="title"><img src="assets/angular-3.svg" />Best Practices</div>
-  <div class="sub-title">Craaaks Edition</div>
-</div>
+
+<md-progress-bar [mode]="progressMode"></md-progress-bar>

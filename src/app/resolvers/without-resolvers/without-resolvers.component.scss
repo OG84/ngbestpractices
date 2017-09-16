@@ -1,0 +1,15 @@
+.products{
+  display: flex;
+
+  .exercises, .workbooks, .apts {
+    display: flex;
+    flex-direction: column;
+    padding: 0 40px 0 0;
+
+    span {
+      padding: 5px;
+      margin: 5px;
+      background-color: lightcoral;
+    }
+  }
+}
