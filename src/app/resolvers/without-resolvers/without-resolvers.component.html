@@ -1,15 +1,46 @@
 <div class="products">
-    <div class="workbooks">
-      <h2>Workbooks</h2>
-      <span *ngFor="let workbook of workbooks">{{workbook.name}}</span>
-    </div>
-    <div class="exercises">
-      <h2>Exercises</h2>
-      <span *ngFor="let exercise of exercises">{{exercise.name}}</span>
-    </div>
-    <div class="apts">
-      <h2>APTs</h2>
-      <span *ngFor="let apt of apts">{{apt.name}}</span>
-    </div>
+  <div class="workbooks">
+    <h2>Workbooks</h2>
+    <span *ngFor="let workbook of workbooks">{{workbook.name}}</span>
   </div>
-  <img class="cover" [src]="coverUrl" alt="access-3">
+  <div class="exercises">
+    <h2>Exercises</h2>
+    <span *ngFor="let exercise of exercises">{{exercise.name}}</span>
+  </div>
+  <div class="apts">
+    <h2>APTs</h2>
+    <span *ngFor="let apt of apts">{{apt.name}}</span>
+  </div>
+  <img class="cover" [src]="coverUrl" alt="access-3" />
+</div>
+
+<md-expansion-panel hideToggle="true">
+    <md-expansion-panel-header>
+        <md-icon>code</md-icon>
+      <md-panel-title>
+        without-resolvers.component.ts
+      </md-panel-title>
+    </md-expansion-panel-header>
+
+    <section highlight-js-content=".highlight">
+        <pre>
+        <code class="typescript highlight">
+            constructor(
+              private workbooksService: WorkbooksService,
+              private exercisesService: ExercisesService,
+              private aptsService: AptsService,
+              private coverService: CoverService) &#123;
+
+            &#125;
+
+            ngOnInit() &#123;
+              this.workbooksService.getWorkbooks().subscribe(x =&gt; this.workbooks = x);
+              this.exercisesService.getExercises().subscribe(x =&gt; this.exercises = x);
+              this.aptsService.getApts().subscribe(x =&gt; this.apts = x);
+              this.coverService.getCoverUrl().subscribe(x =&gt; this.coverUrl = x);
+            &#125;
+            </code>
+          </pre>
+      </section>
+
+  </md-expansion-panel>

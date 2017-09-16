@@ -18,7 +18,7 @@ import { ExercisesResolver } from './shared/exercises/exercises.resolver';
 import { AptsResolver } from './shared/apts/apts.resolver';
 import { RouterModule, Routes } from '@angular/router';
 import { LoadingService } from './shared/loading.service';
-import { MdProgressBarModule } from '@angular/material';
+import { MdProgressBarModule, MdExpansionModule, MdIconModule } from '@angular/material';
 import 'hammerjs';
 import { GuardsComponent } from './guards/guards.component';
 import { CoverService } from './shared/covers/cover.service';
@@ -82,6 +82,8 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     HttpModule,
     MdProgressBarModule,
+    MdExpansionModule,
+    MdIconModule,
     HighlightJsModule
   ],
   providers: [

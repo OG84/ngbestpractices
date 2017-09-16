@@ -1,15 +1,40 @@
 <div class="products">
-    <div class="workbooks">
-      <h2>Workbooks</h2>
-      <span *ngFor="let workbook of workbooks">{{workbook.name}}</span>
-    </div>
-    <div class="exercises">
-      <h2>Exercises</h2>
-      <span *ngFor="let exercise of exercises">{{exercise.name}}</span>
-    </div>
-    <div class="apts">
-      <h2>APTs</h2>
-      <span *ngFor="let apt of apts">{{apt.name}}</span>
-    </div>
+  <div class="workbooks">
+    <h2>Workbooks</h2>
+    <span *ngFor="let workbook of workbooks">{{workbook.name}}</span>
+  </div>
+  <div class="exercises">
+    <h2>Exercises</h2>
+    <span *ngFor="let exercise of exercises">{{exercise.name}}</span>
+  </div>
+  <div class="apts">
+    <h2>APTs</h2>
+    <span *ngFor="let apt of apts">{{apt.name}}</span>
   </div>
   <img class="cover" [src]="coverUrl" alt="access-3">
+</div>
+
+<md-expansion-panel hideToggle="true">
+    <md-expansion-panel-header>
+        <md-icon>code</md-icon>
+      <md-panel-title>
+        with-resolvers.component.ts
+      </md-panel-title>
+    </md-expansion-panel-header>
+
+    <section highlight-js-content=".highlight">
+        <pre>
+          <code class="typescript highlight">
+            constructor(private route: ActivatedRoute) &#123; &#125;
+
+            ngOnInit() &#123;
+              this.workbooks = this.route.snapshot.data['workbooks'];
+              this.exercises = this.route.snapshot.data['exercises'];
+              this.apts = this.route.snapshot.data['apts'];
+              this.coverUrl = this.route.snapshot.data['coverUrl'];
+            &#125;
+          </code>
+        </pre>
+      </section>
+
+  </md-expansion-panel>

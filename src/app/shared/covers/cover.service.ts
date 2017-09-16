@@ -12,7 +12,7 @@ export class CoverService {
       setTimeout(() => {
         observer.next('https://www.phase-6.de/system/galleries/pics/cover_cornelsen/xcornelsen_access_3.png.pagespeed.ic.9qc-DEg5nH.jpg');
         observer.complete();
-      }, 100);
+      }, 800);
     });
 
     this.loadingService.start(cover);
