@@ -24,7 +24,7 @@ export class WorkbooksService {
 
   private createWorkbooks(): Workbook[] {
     const workbooks: Workbook[] = [];
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 3; i++) {
       const workbook: Workbook = {
         id: i,
         name: `Workbook ${i}`

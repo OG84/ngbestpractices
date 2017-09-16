@@ -25,7 +25,7 @@ export class AptsService {
 
   private createApts(): Apt[] {
     const apts: Apt[] = [];
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 4; i++) {
       const apt: Apt = {
         id: i,
         name: `APT ${i}`

@@ -14,6 +14,7 @@ export class WithResolversComponent implements OnInit {
   workbooks: Workbook[];
   exercises: Exercise[];
   apts: Apt[];
+  coverUrl: string;
 
   constructor(private route: ActivatedRoute) { }
 
@@ -21,5 +22,6 @@ export class WithResolversComponent implements OnInit {
     this.workbooks = this.route.snapshot.data['workbooks'];
     this.exercises = this.route.snapshot.data['exercises'];
     this.apts = this.route.snapshot.data['apts'];
+    this.coverUrl = this.route.snapshot.data['coverUrl'];
   }
 }

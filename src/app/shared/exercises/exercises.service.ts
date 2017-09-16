@@ -23,7 +23,7 @@ export class ExercisesService {
 
   private createExercises(): Exercise[] {
     const exercises: Exercise[] = [];
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 3; i++) {
       const exercise: Exercise = {
         id: i,
         name: `Exercise ${i}`

@@ -23,6 +23,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoadingService } from './shared/loading.service';
 import { MdProgressBarModule } from '@angular/material';
 import 'hammerjs';
+import { GuardsComponent } from './guards/guards.component';
+import { CoverService } from './shared/covers/cover.service';
+import { CoverResolver } from './shared/covers/cover.resolver';
 
 const routes: Routes = [
   {
@@ -48,10 +51,15 @@ const routes: Routes = [
         {
           'workbooks': WorkbooksResolver,
           'exercises': ExercisesResolver,
-          'apts': AptsResolver
+          'apts': AptsResolver,
+          'coverUrl': CoverResolver
         }
       }
     ]
+  },
+  {
+    path: 'guards',
+    component: GuardsComponent
   },
   {
     path: '',
@@ -69,7 +77,8 @@ const routes: Routes = [
     PrismComponent,
     ResolversComponent,
     WithoutResolversComponent,
-    WithResolversComponent
+    WithResolversComponent,
+    GuardsComponent
   ],
   imports: [
     BrowserAnimationsModule,
@@ -89,7 +98,9 @@ const routes: Routes = [
     WorkbooksResolver,
     ExercisesResolver,
     AptsResolver,
-    LoadingService
+    CoverResolver,
+    LoadingService,
+    CoverService
   ],
   bootstrap: [AppComponent]
 })
