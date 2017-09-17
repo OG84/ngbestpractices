@@ -3,12 +3,13 @@ import { Router, UrlSegment } from '@angular/router';
 import 'rxjs/add/operator/filter';
 import { ReplaySubject } from 'rxjs/ReplaySubject';
 import { tokenNotExpired } from 'angular2-jwt';
+import { Profile } from './profile.model';
 declare var Auth0Lock: any;
 
 @Injectable()
 export class AuthService {
   isAuthenticatedChanged = new ReplaySubject<boolean>(1);
-  profile = new ReplaySubject<any>(1);
+  profile = new ReplaySubject<Profile>(1);
   private lock: any;
 
   constructor(public router: Router) {
@@ -47,8 +48,6 @@ export class AuthService {
       this.setProfile();
       this.isAuthenticatedChanged.next(true);
     }
-
-    this.isAuthenticatedChanged.subscribe(x => console.log(x));
   }
 
   public login(redirectUrl?: string): void {
@@ -83,7 +82,7 @@ export class AuthService {
 
   private setProfile() {
     const accessToken = localStorage.getItem('access_token');
-    this.lock.getUserInfo(accessToken, (error, profile) => {
+    this.lock.getUserInfo(accessToken, (error, profile: Profile) => {
       if (error) {
         // Handle error
         return;

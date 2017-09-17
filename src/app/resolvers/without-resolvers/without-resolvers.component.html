@@ -11,7 +11,7 @@
     <h2>APTs</h2>
     <span *ngFor="let apt of apts">{{apt.name}}</span>
   </div>
-  <img class="cover" [src]="coverUrl" alt="access-3" />
+  <img class="cover" [src]="coverUrl" alt="access-3" *ngIf="coverUrl"/>
 </div>
 
 <md-expansion-panel hideToggle="true">
