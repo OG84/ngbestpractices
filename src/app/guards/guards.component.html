@@ -1,9 +1,39 @@
-<img class="picture" [src]="profile?.picture" alt="user-picture" *ngIf="profile?.picture">
-<div class="facts">
-  <div class="fact"><span>Vorname:</span> <span>{{profile?.given_name}}</span></div>
-  <div class="fact"><span>Nachname:</span> <span>{{profile?.family_name}}</span></div>
-  <div class="fact"><span>Spitzname:</span> <span>{{profile?.nickname}}</span></div>
-  <div class="fact"><span>Sprache:</span> <span>{{profile?.locale}}</span></div>
-  <div class="fact"><span>Email:</span> <span>{{profile?.email}}</span></div>
-  <div class="fact"><span>Email bestätigt:</span> <span>{{profile?.email_verified}}</span></div>
+<div class="profile">
+  <img class="picture" [src]="profile?.picture" alt="user-picture" *ngIf="profile?.picture">
+  <div class="facts">
+    <div class="fact"><span>Vorname:</span> <span>{{profile?.given_name}}</span></div>
+    <div class="fact"><span>Nachname:</span> <span>{{profile?.family_name}}</span></div>
+    <div class="fact"><span>Spitzname:</span> <span>{{profile?.nickname}}</span></div>
+    <div class="fact"><span>Sprache:</span> <span>{{profile?.locale}}</span></div>
+    <div class="fact"><span>Email:</span> <span>{{profile?.email}}</span></div>
+    <div class="fact"><span>Email bestätigt:</span> <span>{{profile?.email_verified}}</span></div>
+  </div>
 </div>
+
+<md-expansion-panel hideToggle="true">
+  <md-expansion-panel-header>
+    <md-icon>code</md-icon>
+    <md-panel-title>
+        auth.guard.ts
+    </md-panel-title>
+  </md-expansion-panel-header>
+
+  <section highlight-js-content=".highlight">
+    <pre>
+        <code class="typescript highlight">
+  canActivate(
+    next: ActivatedRouteSnapshot,
+    state: RouterStateSnapshot): Observable&lt;boolean&gt; | Promise&lt;boolean&gt; | boolean &#123;
+
+      if (this.authService.isAuthenticated()) &#123;
+        return true;
+      &#125;
+
+      this.authService.login(state.url);
+      return false;
+    &#125;
+            </code>
+          </pre>
+  </section>
+
+</md-expansion-panel>
