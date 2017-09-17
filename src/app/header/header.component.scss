@@ -13,7 +13,7 @@
             .item {
                 display: flex;
                 flex-direction: column;
-                font-size: 1.3rem;
+                font-size: 1.2rem;
                 cursor: pointer;
                 background-color: lightgray;
                 padding: 10px;
@@ -44,7 +44,7 @@
         .brand {
             display: flex;
             flex-direction: column;
-            font-size: 2rem;
+            font-size: 1.4rem;
 
             .title {
                 display: flex;
@@ -52,7 +52,7 @@
                 justify-content: center;
 
                 img {
-                    width: 200px;
+                    width: 120px;
                     padding: 0 10px 0 0;
                 }
             }
@@ -64,5 +64,16 @@
                 font-weight: bold;
             }
         }
+    }
+
+    .profile {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+
+      .picture {
+        max-height: 30px;
+        padding: 0 0 0 5px;
+      }
     }
 }

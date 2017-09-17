@@ -24,6 +24,9 @@ import { GuardsComponent } from './guards/guards.component';
 import { CoverService } from './shared/covers/cover.service';
 import { CoverResolver } from './shared/covers/cover.resolver';
 import { HighlightJsModule, HighlightJsService } from 'angular2-highlight-js';
+import { AuthService } from './shared/auth/auth.service';
+import 'auth0-lock';
+import { AuthGuard } from './shared/auth/auth.guard';
 
 const routes: Routes = [
   {
@@ -57,7 +60,13 @@ const routes: Routes = [
   },
   {
     path: 'guards',
-    component: GuardsComponent
+    component: GuardsComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'callback',
+    redirectTo: 'home',
+    pathMatch: 'full'
   },
   {
     path: '',
@@ -100,7 +109,9 @@ const routes: Routes = [
     AptsResolver,
     CoverResolver,
     LoadingService,
-    CoverService
+    CoverService,
+    AuthService,
+    AuthGuard
   ],
   bootstrap: [AppComponent]
 })

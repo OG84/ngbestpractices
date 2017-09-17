@@ -4,11 +4,17 @@
     <div class="item" routerLink="cli" routerLinkActive="active">CLI<span>5 min.</span></div>
     <div class="item" routerLink="resolvers/without" routerLinkActive="active">Resolvers<span>Without</span></div>
     <div class="item" routerLink="resolvers/with" routerLinkActive="active">Resolvers<span>With</span></div>
-    <div class="item" routerLink="guards" routerLinkActive="active">Guards<span>10 min.</span></div>
+    <div class="item" routerLink="guards" routerLinkActive="active">Guards</div>
+    <div class="item" (click)="login()" *ngIf="!isAuthenticated">Login</div>
+    <div class="item" (click)="logout()" *ngIf="isAuthenticated">Logout</div>
   </div>
   <div class="brand">
     <div class="title"><img src="assets/angular-3.svg" />Best Practices</div>
-    <div class="sub-title">Craaaks Edition</div>
+    <div class="sub-title" *ngIf="!isAuthenticated">Craaaks Edition</div>
+    <div class="profile" *ngIf="isAuthenticated && profile?.picture">
+        <div class="span">Hallo {{profile?.given_name}}!</div>
+        <img class="picture" [src]="profile?.picture" alt="user-picture">
+    </div>
   </div>
 </div>
 

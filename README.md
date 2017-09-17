@@ -2,7 +2,7 @@
 
 ## Preparation for a little tech talk @cornelsen
 
-https://ngbestpractices.firebaseapp.com/home
+https://ngbestpractice.firebaseapp.com/home
 
 # Cli
 

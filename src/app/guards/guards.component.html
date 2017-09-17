@@ -1,3 +1,9 @@
-<p>
-  guards works!
-</p>
+<img class="picture" [src]="profile?.picture" alt="user-picture" *ngIf="profile?.picture">
+<div class="facts">
+  <div class="fact"><span>Vorname:</span> <span>{{profile?.given_name}}</span></div>
+  <div class="fact"><span>Nachname:</span> <span>{{profile?.family_name}}</span></div>
+  <div class="fact"><span>Spitzname:</span> <span>{{profile?.nickname}}</span></div>
+  <div class="fact"><span>Sprache:</span> <span>{{profile?.locale}}</span></div>
+  <div class="fact"><span>Email:</span> <span>{{profile?.email}}</span></div>
+  <div class="fact"><span>Email bestätigt:</span> <span>{{profile?.email_verified}}</span></div>
+</div>

@@ -10,8 +10,6 @@ export class AptsService {
   }
 
   getApts(): Observable<Apt[]> {
-    console.log('get apts');
-
     const getApts: Observable<Apt[]> = Observable.create(observer => {
       setTimeout(() => {
         observer.next(this.createApts());

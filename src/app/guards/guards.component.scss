@@ -1,0 +1,22 @@
+:host {
+  display: flex;
+
+  .picture {
+    max-height: 150px;
+    padding: 0 20px 0 0;
+  }
+
+  .facts {
+    display: flex;
+    flex-direction: column;
+
+    .fact {
+      display: flex;
+
+      span:first-child {
+        width: 150px;
+        font-weight: bold;
+      }
+    }
+  }
+}

@@ -9,7 +9,8 @@ import { LoadingService } from './shared/loading.service';
 export class AppComponent implements OnInit {
   isLoading: boolean;
 
-  constructor(private loadingService: LoadingService) {
+  constructor(
+    private loadingService: LoadingService) {
 
   }
 

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../shared/auth/auth.service';
 
 @Component({
   selector: 'ngbp-guards',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GuardsComponent implements OnInit {
 
-  constructor() { }
+  profile: any = '{}';
+  constructor(private authService: AuthService) { }
 
   ngOnInit() {
+    this.authService.profile.subscribe(x => this.profile = x);
   }
-
 }
