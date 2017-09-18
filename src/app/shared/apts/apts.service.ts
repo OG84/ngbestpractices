@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { Apt } from './apt.model';
-import { LoadingService } from '../loading.service';
+import { LoadingService } from 'angular-loading-service';
 
 @Injectable()
 export class AptsService {

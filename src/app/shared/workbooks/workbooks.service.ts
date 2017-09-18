@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Workbook } from './workbook.model';
 import { Observable } from 'rxjs/Observable';
-import { LoadingService } from '../loading.service';
+import { LoadingService } from 'angular-loading-service';
 
 @Injectable()
 export class WorkbooksService {

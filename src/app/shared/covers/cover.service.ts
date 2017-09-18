@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-import { LoadingService } from '../loading.service';
+import { LoadingService } from 'angular-loading-service';
 
 @Injectable()
 export class CoverService {

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { LoadingService } from './shared/loading.service';
 
 @Component({
   selector: 'ngbp-root',
@@ -7,14 +6,10 @@ import { LoadingService } from './shared/loading.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  isLoading: boolean;
-
-  constructor(
-    private loadingService: LoadingService) {
+  constructor() {
 
   }
 
   ngOnInit(): void {
-    this.loadingService.loadingChanged.subscribe(x => this.isLoading = x);
   }
 }

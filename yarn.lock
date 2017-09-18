@@ -301,6 +301,14 @@ amdefine@>=0.0.4:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/amdefine/-/amdefine-1.0.1.tgz#4a5282ac164729e93619bcfd3ad151f817ce91f5"
 
+angular-loading-service@^0.0.3:
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/angular-loading-service/-/angular-loading-service-0.0.3.tgz#358510b4d4116a19a699633a568a358a6c9a026b"
+  dependencies:
+    "@angular/http" "^4.2.4"
+    rxjs "^5.4.2"
+    zone.js "^0.8.14"
+
 angular2-highlight-js@^6.0.1-alpha:
   version "6.0.1-alpha"
   resolved "https://registry.yarnpkg.com/angular2-highlight-js/-/angular2-highlight-js-6.0.1-alpha.tgz#a49450457a000ec19cc6fe52311db02ec9188e3b"

@@ -6,7 +6,6 @@ import { CliComponent } from './cli/cli.component';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { Http, XHRBackend, RequestOptions, HttpModule } from '@angular/http';
-import { HttpService } from './shared/http.service';
 import { ResolversComponent } from './resolvers/resolvers.component';
 import { WorkbooksService } from './shared/workbooks/workbooks.service';
 import { ExercisesService } from './shared/exercises/exercises.service';
@@ -17,7 +16,6 @@ import { WorkbooksResolver } from './shared/workbooks/workbooks.resolver';
 import { ExercisesResolver } from './shared/exercises/exercises.resolver';
 import { AptsResolver } from './shared/apts/apts.resolver';
 import { RouterModule, Routes } from '@angular/router';
-import { LoadingService } from './shared/loading.service';
 import { MdProgressBarModule, MdExpansionModule, MdIconModule } from '@angular/material';
 import 'hammerjs';
 import { GuardsComponent } from './guards/guards.component';
@@ -27,6 +25,7 @@ import { HighlightJsModule, HighlightJsService } from 'angular2-highlight-js';
 import { AuthService } from './shared/auth/auth.service';
 import 'auth0-lock';
 import { AuthGuard } from './shared/auth/auth.guard';
+import { AngularLoadingModule } from 'angular-loading-service';
 
 const routes: Routes = [
   {
@@ -93,14 +92,10 @@ const routes: Routes = [
     MdProgressBarModule,
     MdExpansionModule,
     MdIconModule,
-    HighlightJsModule
+    HighlightJsModule,
+    AngularLoadingModule
   ],
   providers: [
-    {
-      provide: Http,
-      useFactory: httpFactory,
-      deps: [XHRBackend, RequestOptions]
-    },
     WorkbooksService,
     ExercisesService,
     AptsService,
@@ -108,7 +103,6 @@ const routes: Routes = [
     ExercisesResolver,
     AptsResolver,
     CoverResolver,
-    LoadingService,
     CoverService,
     AuthService,
     AuthGuard
@@ -116,8 +110,3 @@ const routes: Routes = [
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-
-export function httpFactory(backend: XHRBackend, options: RequestOptions) {
-  return new HttpService(backend, options);
-}
-

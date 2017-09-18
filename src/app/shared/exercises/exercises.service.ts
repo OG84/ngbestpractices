@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { Exercise } from './exercises.model';
-import { LoadingService } from '../loading.service';
+import { LoadingService } from 'angular-loading-service';
 
 @Injectable()
 export class ExercisesService {

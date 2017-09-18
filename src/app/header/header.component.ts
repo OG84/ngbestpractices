@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { LoadingService } from '../shared/loading.service';
+import { LoadingService } from 'angular-loading-service';
 import { AuthService } from '../shared/auth/auth.service';
 import { Profile } from '../shared/auth/profile.model';
 
@@ -19,13 +19,8 @@ export class HeaderComponent implements OnInit {
     private authService: AuthService) { }
 
   ngOnInit() {
-    this.loadingService.loadingChanged.subscribe(isLoading => {
-      if (isLoading) {
-        this.progressMode = 'indeterminate';
-      } else {
-        this.progressMode = 'determinate';
-      }
-    });
+    this.loadingService.loadingStart.subscribe(() => this.progressMode = 'indeterminate');
+    this.loadingService.loadingEnd.subscribe(() => this.progressMode = 'determinate');
 
     this.authService.isAuthenticatedChanged.subscribe(x => this.isAuthenticated = x);
     this.authService.profile.subscribe(x => this.profile = x);

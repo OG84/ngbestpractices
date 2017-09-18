@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Http } from '@angular/http';
 
 @Component({
   selector: 'ngbp-home',
@@ -7,8 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private http: Http) { }
 
   ngOnInit() {
+    this.http.get('https://jsonplaceholder.typicode.com/posts/1');
   }
 }
