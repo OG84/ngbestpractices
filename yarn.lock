@@ -301,9 +301,9 @@ amdefine@>=0.0.4:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/amdefine/-/amdefine-1.0.1.tgz#4a5282ac164729e93619bcfd3ad151f817ce91f5"
 
-angular-loading-service@^0.0.3:
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/angular-loading-service/-/angular-loading-service-0.0.3.tgz#358510b4d4116a19a699633a568a358a6c9a026b"
+angular-loading-service@^0.0.5:
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/angular-loading-service/-/angular-loading-service-0.0.5.tgz#d0eecc1cf06518996e8a1e103881fb0bbb1eea3f"
   dependencies:
     "@angular/http" "^4.2.4"
     rxjs "^5.4.2"
